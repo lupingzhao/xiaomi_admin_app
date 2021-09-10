@@ -1,0 +1,14 @@
+/* 全局样式 不需要引入 */
+@import './style/common.scss';
+@import '//at.alicdn.com/t/font_2763713_1oz4y6x065k.css';
+
+html,
+body,
+#root,
+.ant-layout {
+  height: 100%;
+}
+
+.w-e-text-container {
+  height: 380px !important;
+}
