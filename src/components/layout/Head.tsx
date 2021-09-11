@@ -7,6 +7,7 @@ import { DownOutlined } from '@ant-design/icons';
 
 // 图片使用 先import 引入 在使用
 import a from '../../static/icon/cart.png'
+import { useEffect } from 'react';
 
 const Head = () => {
 
@@ -40,6 +41,12 @@ const Head = () => {
     </Menu>
   )
 
+  useEffect(() => {
+    if (!JSON.parse(localStorage.getItem('user')!)) {
+      history.push('/Login')
+    }
+  }, [])
+
   return (
     <div className='font-s-16 flex'>
       <div className='m-r-15 '>
@@ -64,9 +71,12 @@ const Head = () => {
                 <i className='iconfont icon-a-touxiang' style={{ fontSize: 20 }}></i>
             }
           </div>
-          <div>
-            {user.username}
-          </div>
+
+          {
+            user ? <div>{user.username}</div> : null
+          }
+
+
         </div>
       </Popconfirm>
 
