@@ -57,10 +57,11 @@ const Seckill = () => {
   }
   // 编辑导航
   let edit = (val: any) => {
+    // console.log(val);
     setSkillGoods(val.goods)
     val.start_time = moment(val.start_time)
     val.end_time = moment(val.end_time)
-    form.setFieldsValue({ ...val, })
+    form.setFieldsValue({ ...val, id: val._id })
     setIsVisible(true)
     setIsedit(true)
   }

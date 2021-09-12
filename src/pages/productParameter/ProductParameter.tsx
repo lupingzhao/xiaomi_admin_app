@@ -92,6 +92,7 @@ const ProductParameter = () => {
       type: 'Params/goods',
       payload: { current: 1, pageSize: 1000, query: '' }
     })
+
   }, [])
 
   return (
@@ -128,7 +129,7 @@ const ProductParameter = () => {
 
 
       <Amodel show={isVisible} isShow={isShow}
-        title='添加秒杀' submit={submit} isfooter={false}>
+        title='添加参数' submit={submit} isfooter={false}>
         <Form
           name="basic"
           wrapperCol={{ span: 20 }}

@@ -85,6 +85,7 @@ const LoginModel: ParamsModelType = {
           type: 'setgoods',
           payload: res.data
         })
+
       } else message.error(res.msg)
     },
   },
@@ -100,7 +101,7 @@ const LoginModel: ParamsModelType = {
     setgoods(state, action) {
       return {
         ...state,
-        Paramss: state!.Paramss,
+        Paramss: [],
         total: state!.total,
         goods: action.payload
       }

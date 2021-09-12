@@ -411,10 +411,10 @@ export default {
     return http.get(`/admin/getSeckill?current=${current}&pageSize=${pageSize}&query=${query}`)
   },
   // 添加秒杀
-  addSeckill({ start_time, end_time, goods_number, price, goods, isShow }:
+  addSeckill({ start_time, end_time, goods_number, price, goods, isShow, id }:
     {
       price: string, start_time: string, end_time: string,
-      goods_number: string, goods: any, isShow: boolean
+      goods_number: string, goods: any, isShow: boolean, id: string
     }) {
     return http.post('/admin/addSeckill', {
       start_time,
