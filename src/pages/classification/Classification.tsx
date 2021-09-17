@@ -17,10 +17,22 @@ const Classification = () => {
   let cateData = useSelector((state: any) => state.Category.Categorys)
   // 搜索事件
   const onSearch = (value: string) => {
-    dispatch({
-      type: 'Category/Category',
-      payload: value
-    })
+    if (value) {
+      dispatch({
+        type: 'Category/Category',
+        payload: value
+      })
+    } else {
+      // 分类数据
+      dispatch({
+        type: 'Category/Category',
+        payload: {
+          res: '',
+          isadd: false
+        }
+      })
+    }
+
   };
   // 表单验证通过
   const onFinish = (values: any) => {

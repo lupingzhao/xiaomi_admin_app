@@ -19,6 +19,7 @@ const BasicsInfo = (props: Props) => {
 
   // 表单验证通过
   const onFinish = (values: any) => {
+    // console.log(values);
     values.category = values.category[1]
     localStorage.setItem('basinfo', JSON.stringify(values))
     props.base(2)
@@ -39,7 +40,15 @@ const BasicsInfo = (props: Props) => {
   // 是否是编辑
   useEffect(() => {
     if (localStorage.getItem('editGoods')) {
-      form.setFieldsValue({ ...editdata! })
+      let ed = JSON.parse(localStorage.getItem('editGoods')!)
+      cate.map((i: any) => {
+        i.children.map((e: any) => {
+          if (e.key === ed.category) {
+            ed.category = [i.key, ed.category]
+          }
+        })
+      })
+      form.setFieldsValue({ ...ed })
       setAvatar(editdata.cover)
     }
   }, [])
